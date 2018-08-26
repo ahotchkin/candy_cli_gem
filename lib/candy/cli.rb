@@ -2,7 +2,12 @@ class Candy::CLI
 
   def call
     puts "Welcome to the official Candy app!"
+    menu
     list_categories
+  end
+
+  def menu
+    
   end
 
   def list_categories
