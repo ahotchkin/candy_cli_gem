@@ -1,0 +1,2 @@
+class Candy::Scraper
+end
