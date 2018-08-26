@@ -1,5 +1,8 @@
-require "candy/version"
 
-module Candy
-  # Your code goes here...
-end
+
+
+require_relative "candy/candy"
+require_relative "candy/category"
+require_relative "candy/cli"
+require_relative "candi/scraper"
+require "candy/version"
