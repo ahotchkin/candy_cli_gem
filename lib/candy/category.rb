@@ -1,8 +1,9 @@
 class Candy::Category
-  attr_accessor :name, :link
+  attr_accessor :name, :url
 
-  def initialize(@name = nil, @link = nil)
+  def initialize(@name = nil, @url = nil)
     @name = name
+    @url = url
   end
 
 end
