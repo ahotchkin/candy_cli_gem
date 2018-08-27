@@ -7,6 +7,7 @@ Prompts:
 
 From the candy category list view, the user will have three options:
 1. Enter a number associated with candy category to see a numbered list of all candy available in that category
+  - Attempt to have the candy name be a hyperlink to the url so the user can click on it to go to the webpage
 2. Enter 'menu' to go back to the main menu
 3. Enter 'exit' to exit
 

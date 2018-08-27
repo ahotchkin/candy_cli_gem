@@ -60,6 +60,7 @@ class Candy::CLI
       # if category_input.to_i.between?(1, Candy::Category.all.length)
       #   category = NYStateFairEvents::Concert.all[category_input.to_i-1]
       #   category.category_details
+      #   puts "Click on any candy below for more information"
       if category_input.to_i == 1
         puts "1. SPANGLER Individually Wrapped Mini Peppermint Candy Canes Bulk, 500 Count"
         # puts "$29.95"
@@ -96,6 +97,12 @@ class Candy::CLI
         puts "3. Seacoast Whale Tail 1 oz 12 Count"
         # puts "$29.95"
         # puts "For more information visit: https://www.candy.com/seacoast-whale-tail-1-oz-12-count"
+        puts <<-DOC.gsub /^\s*/, ""
+          Enter a candy number to see details on that candy. Otherwise, enter one of the following prompts:
+          - Enter 'menu' to see the main menu
+          - Enter 'exit' to exit
+        DOC
+        puts ""
       elsif category_input == "menu"
         menu
       elsif category_input != "exit"

@@ -1,5 +1,6 @@
-
-
+require 'open-uri'
+require 'nokogiri'
+require 'pry'
 
 require_relative "candy/candy"
 require_relative "candy/category"
