@@ -21,16 +21,16 @@ class Candy::Scraper
     Nokogiri::HTML(open("category.url"))
   end
 
-  # def scrape_category_page(category)
-  #   self.get_category_page.css
-  # end
+  def scrape_category_page(category)
+    self.get_category_page.css
+  end
 
   def make_candy
     self.get_category_page.collect do |candy|
       Candy::Candy.new(
         candy.css("h3").text,
-        # Category here
-        candy.css("span.price").text
+        candy.css("div catalogTitle h1").text,
+        candy.css("span.price").text,
         candy.css("h3 a").attr("href")
       )
     end

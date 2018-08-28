@@ -36,15 +36,8 @@ class Candy::CLI
 
   def list_categories
     puts ""
-    puts "Candy.com Sweets:"
+    Candy::Category.list_all
     puts ""
-    puts "1. Candy Canes"
-    puts "2. Candy Corn"
-    puts "3. Candy Sticks"
-
-
-
-    # Candy::Category.list_all
 
     category_input = ""
     while category_input != "exit"
