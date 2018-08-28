@@ -14,8 +14,8 @@ class Candy::Category
   end
 
   def self.list_all
-    self.all.each.with_index(1) do |category, i|
-      puts "#{i}. #{category}"
+    @@all.each.with_index(1) do |category, i|
+      puts "#{i}. #{category.name}"
     end
   end
 

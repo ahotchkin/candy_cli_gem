@@ -16,7 +16,7 @@ class Candy::Candy
   end
 
   def self.list_all
-    self.all.each.with_index(1) do |candy, i|
+    @@all.each.with_index(1) do |candy, i|
       puts "#{i}. #{candy} - #{candy.price}"
     end
   end

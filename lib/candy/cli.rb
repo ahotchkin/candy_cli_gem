@@ -1,9 +1,9 @@
 class Candy::CLI
 
   def call
+    Candy::Scraper.new.make_categories
     puts "Welcome to the official Candy.com sweets app!"
     menu
-    list_categories
   end
 
   def menu
