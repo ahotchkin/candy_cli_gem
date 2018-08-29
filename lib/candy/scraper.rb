@@ -29,7 +29,7 @@ class Candy::Scraper
     self.get_category_page.collect do |candy|
       Candy::Candy.new(
         candy.css("h3").text,
-        candy.css("div catalogTitle h1").text,
+        candy.css("div.catalogTitle h1").text,
         candy.css("span.price").text,
         candy.css("h3 a").attr("href")
       )
