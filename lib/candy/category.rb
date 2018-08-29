@@ -1,11 +1,11 @@
 class InvalidType < StandardError; end
 
 class Candy::Category
-  attr_accessor :name, :url
+  attr_accessor :name, :url, :candies
 
   @@all = []
 
-  def initialize(name = nil, url = nil)
+  def initialize(name = nil, url = nil, candies = nil)
     @name = name
     @url = url
     @candies = []
