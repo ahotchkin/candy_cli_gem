@@ -1,6 +1,3 @@
-NOTE: PROJECT IN PROGRESS AS OF 8/28/18.
-
-
 CandyCLI will be a command-line app to allow a user to see a list of candy available at Candy.com. When they run the app, they will see a greeting and be asked to enter a prompt.
 
 Prompts:

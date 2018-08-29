@@ -5,13 +5,13 @@ class Candy::Scraper
   end
 
   def scrape_index_page
-    self.get_page.css("div.catalogNavigation-categories")
+    self.get_page.css("div.categoryListItem-inner")
   end
 
   def make_categories
-    self.scrape_index_page.collect do |category|
+    self.scrape_index_page.each do |category|
       Candy::Category.new(
-        category.css("ul li").text.gsub(/[\t\n]/, ""),
+        category.css("h2.candy-subcat-titles").text.gsub(/[ \n]/, ""),
         category.css("a").attr("href")
       )
     end
