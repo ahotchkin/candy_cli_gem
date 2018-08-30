@@ -1,5 +1,3 @@
-require 'pry'
-
 class Candy::Category
   attr_accessor :name, :url, :candies
 
@@ -24,15 +22,13 @@ class Candy::Category
 
   def add_candies(candy)
     candy = Candy::Candy.new
-    binding 'pry'
     @candies << candy
     candy.category = self
   end
 
   def list_candies
     @candies.each.with_index(1) do |candy|
-      # puts "#{i}. #{candy} - #{candy.price}"
-      puts "#{candy}"
+      puts "#{i}. #{candy} - #{candy.price}"
     end
   end    
 

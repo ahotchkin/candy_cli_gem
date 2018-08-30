@@ -36,7 +36,9 @@ class Candy::CLI
 
   def list_categories
     puts ""
+    puts "am i getting here?"
     Candy::Category.list_all
+    puts "but what about here?"
     puts ""
 
     category_input = ""
@@ -72,13 +74,13 @@ class Candy::CLI
     #   #     - Enter 'exit' to exit
     #   #   DOC
     #     puts ""
-    #   elsif category_input == "menu"
-    #     menu
-    #   elsif category_input != "exit"
-    #     puts ""
-    #     puts "I'm sorry, I didn't catch that."
-    #   elsif category_input == "exit"
-    #     goodbye
+      elsif category_input == "menu"
+        menu
+      elsif category_input != "exit"
+        puts ""
+        puts "I'm sorry, I didn't catch that."
+      elsif category_input == "exit"
+        goodbye
       end
     end
   end
