@@ -10,15 +10,15 @@ class Candy::Candy
     @@all = []
   end
 
-  def self.all
-    @@all
-  end
-
-  def self.list_all
-    @@all.each.with_index(1) do |candy, i|
-      puts "#{i}. #{candy} - #{candy.price}"
-    end
-  end
+  # def self.all
+  #   @@all
+  # end
+  #
+  # def self.list_all
+  #   @@all.each.with_index(1) do |candy, i|
+  #     puts "#{i}. #{candy} - #{candy.price}"
+  #   end
+  # end
 
 
 end

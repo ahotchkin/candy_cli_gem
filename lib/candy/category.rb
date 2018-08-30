@@ -30,4 +30,10 @@ class Candy::Category
     end
   end
 
+  def list_candies
+    @candies.each.with_index(1) do |candy|
+      puts "#{i}. #{candy} - #{candy.price}"
+    end
+  end    
+
 end

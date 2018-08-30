@@ -55,7 +55,7 @@ class Candy::CLI
         # List out all candy in a given category
         puts "Click on any candy below for more information"
         category = Candy::Category.all[category_input.to_i-1]
-        category.add_candies(Candy::Candy)
+        category.list_candies
 
     #       candy.list_all
     #     end
