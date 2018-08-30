@@ -36,9 +36,7 @@ class Candy::CLI
 
   def list_categories
     puts ""
-    puts "am i getting here?"
     Candy::Category.list_all
-    puts "but what about here?"
     puts ""
 
     category_input = ""
