@@ -1,4 +1,4 @@
-class InvalidType < StandardError; end
+require 'pry'
 
 class Candy::Category
   attr_accessor :name, :url, :candies
@@ -23,16 +23,16 @@ class Candy::Category
   end
 
   def add_candies(candy)
-    if !candy.is_a?(Candy)
-      raise InvalidType, "must be a Candy"
-    else
-      @candies << candy
-    end
+    candy = Candy::Candy.new
+    binding 'pry'
+    @candies << candy
+    candy.category = self
   end
 
   def list_candies
     @candies.each.with_index(1) do |candy|
-      puts "#{i}. #{candy} - #{candy.price}"
+      # puts "#{i}. #{candy} - #{candy.price}"
+      puts "#{candy}"
     end
   end    
 

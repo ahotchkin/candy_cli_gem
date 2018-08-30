@@ -1,5 +1,5 @@
 class Candy::Candy
-  attr_accessor :name, :price, :url
+  attr_accessor :name, :price, :url, :category
 
   @@all = []
 
