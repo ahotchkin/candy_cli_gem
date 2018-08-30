@@ -20,9 +20,11 @@ class Candy::Category
     end
   end
 
-  def add_candies(candy)
-    candy = Candy::Candy.new
+  def add_candy(candy)
+    candy = Candy::Scraper.new.make_candy(self)
     @candies << candy
+
+    # Does this belong here:
     candy.category = self
   end
 
