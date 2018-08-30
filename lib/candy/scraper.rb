@@ -26,11 +26,11 @@ class Candy::Scraper
   end
 
   def make_candy(category)
-    self.scrape_category_page(category).each do |candy_category|
+    self.scrape_category_page(category).each do |candy_type|
       candy = Candy::Candy.new(
-        candy_category.css("h3").text,
-        candy_category.css("span.regular-price").text.gsub(/[ \n]/, ""),
-        candy_category.css("h3 a").attribute("href").value
+        candy_type.css("h3").text,
+        candy_type.css("span.regular-price").text.gsub(/[ \n]/, ""),
+        candy_type.css("h3 a").attribute("href").value
       )
       category.add_candy(candy)
     end

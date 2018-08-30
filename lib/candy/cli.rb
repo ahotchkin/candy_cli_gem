@@ -2,7 +2,7 @@ class Candy::CLI
 
   def call
     Candy::Scraper.new.make_categories
-    puts "Welcome to the official Candy.com sweets app!"
+    puts "Welcome to the official Candy.com Sweets app!"
     menu
   end
 
@@ -21,7 +21,6 @@ class Candy::CLI
 
       if menu_input == "candy"
         list_categories
-        # list_candy
       elsif menu_input == "help"
         puts ""
         puts "This app is designed to provide information on all candy available in the 'Sweets' section of Candy.com. Follow the prompts for event details."
@@ -52,7 +51,7 @@ class Candy::CLI
       category_input = gets.strip.downcase
 
       if category_input.to_i.between?(1, Candy::Category.all.length)
-        puts "Click on any candy below for more information"
+        puts "Click on any candy link for more information:"
         category = Candy::Category.all[category_input.to_i-1]
         Candy::Scraper.new.make_candy(category)
         category.list_candies
