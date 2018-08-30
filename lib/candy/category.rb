@@ -1,3 +1,5 @@
+class InvalidType < StandardError; end
+
 class Candy::Category
   attr_accessor :name, :url, :candies
 
@@ -21,16 +23,16 @@ class Candy::Category
   end
 
   def add_candy(candy)
-    candy = Candy::Scraper.new.make_candy(self)
-    @candies << candy
-
-    # Does this belong here:
-    candy.category = self
+    if !candy.is_a?(Candy::Candy)
+      raise InvalidType, "must be a Candy"
+    else
+      @candies << candy
+    end
   end
 
   def list_candies
-    @candies.each.with_index(1) do |candy|
-      puts "#{i}. #{candy} - #{candy.price}"
+    @candies.each.with_index(1) do |candy, i|
+      puts "#{i}. #{candy.name} - #{candy.price}"
     end
   end
 

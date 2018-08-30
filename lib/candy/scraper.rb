@@ -1,7 +1,4 @@
 class Candy::Scraper
-  # attr_accessor :category
-  #
-  # def initialize(name)
 
   def get_page
     Nokogiri::HTML(open("https://www.candy.com/sweets"))
@@ -23,38 +20,20 @@ class Candy::Scraper
   def get_category_page(category)
     Nokogiri::HTML(open(category.url))
   end
-  # 
-  # def get_category_page
-  #   Nokogiri::HTML(open("https://www.candy.com/sweets/candy-canes"))
-  # end
 
   def scrape_category_page(category)
     self.get_category_page(category).css("div.productListItem-content")
   end
 
-  # def scrape_category_page
-  #   self.get_category_page.css("div.productListItem-content")
-  # end
-
   def make_candy(category)
-    self.scrape_category_page(category).each do |candy|
-      Candy::Candy.new(
-        candy.css("h3").text,
-        candy.css("span.regular-price").text.gsub(/[ \n]/, ""),
-        candy.css("h3 a").attribute("href").value
+    self.scrape_category_page(category).each do |candy_category|
+      candy = Candy::Candy.new(
+        candy_category.css("h3").text,
+        candy_category.css("span.regular-price").text.gsub(/[ \n]/, ""),
+        candy_category.css("h3 a").attribute("href").value
       )
+      category.add_candy(candy)
     end
   end
-
-  # def scrape_candy(category)
-  #   self.scrape_category_page(category).each do |category_page|
-  #     candy = Candy::Candy.new
-  #     candy.name = category_page.css("h3").text
-  #     candy.price = category_page.css("span.regular-price").text.gsub(/[ \n]/, "")
-  #     candy.url = category_page.css("h3 a").attribute("href").value
-  #
-  #     @category.add_candy(candy)
-  #   end
-  # end
 
 end

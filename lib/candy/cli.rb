@@ -52,28 +52,10 @@ class Candy::CLI
       category_input = gets.strip.downcase
 
       if category_input.to_i.between?(1, Candy::Category.all.length)
-        # category = Candy::Category.all[category_input.to_i-1]
-        # List out all candy in a given category
         puts "Click on any candy below for more information"
         category = Candy::Category.all[category_input.to_i-1]
         Candy::Scraper.new.make_candy(category)
         category.list_candies
-
-    #       candy.list_all
-    #     end
-    #   # if category_input.to_i == 1
-    #   #   puts "1. SPANGLER Individually Wrapped Mini Peppermint Candy Canes Bulk, 500 Count - $29.95"
-    #   #   # puts "For more information visit: https://www.candy.com/spangler-mini-peppermint-candy-canes-bulk-500-count"
-    #   #   puts "2. Spangler Peppermint Candy Cane Jar, 60 count - $29.95"
-    #   #   # puts "For more information visit: https://www.candy.com/spangler-peppermint-candy-cane-jar-60-count"
-    #   #   puts "3. Spangler Cherry Candy Canes, 12 Count, 3 Pack - $9.95"
-    #   #   # puts "For more information visit: https://www.candy.com/spangler-cherry-candy-canes-12-pieces-3-count"
-    #   #   puts <<-DOC.gsub /^\s*/, ""
-    #   #     Enter a candy number to see details on that candy. Otherwise, enter one of the following prompts:
-    #   #     - Enter 'menu' to see the main menu
-    #   #     - Enter 'exit' to exit
-    #   #   DOC
-    #     puts ""
       elsif category_input == "menu"
         menu
       elsif category_input != "exit"
@@ -85,55 +67,6 @@ class Candy::CLI
     end
   end
 
-  # def list_candy
-  #   puts ""
-  #    Candy::Candy.list_all
-  #    puts ""
-  #
-  #    category_input = ""
-  #    while category_input != "exit"
-  #      puts ""
-  #      puts <<-DOC.gsub /^\s*/, ""
-  #        Enter a category number to see a list of all available candy in that category. Otherwise, enter one of the following prompts:
-  #        - Enter 'menu' to see the main menu
-  #        - Enter 'exit' to exit
-  #      DOC
-  #      puts ""
-  #      category_input = gets.strip.downcase
-  #
-  #      if category_input.to_i.between?(1, Candy::Candy.all.length)
-  #        # category = Candy::Category.all[category_input.to_i-1]
-  #        # List out all candy in a given category
-  #        puts "Click on any candy below for more information"
-  #        category = Candy::Candy.all[category_input.to_i-1]
-  #        category.list_all
-  #
-  #    #       candy.list_all
-  #    #     end
-  #    #   # if category_input.to_i == 1
-  #    #   #   puts "1. SPANGLER Individually Wrapped Mini Peppermint Candy Canes Bulk, 500 Count - $29.95"
-  #    #   #   # puts "For more information visit: https://www.candy.com/spangler-mini-peppermint-candy-canes-bulk-500-count"
-  #    #   #   puts "2. Spangler Peppermint Candy Cane Jar, 60 count - $29.95"
-  #    #   #   # puts "For more information visit: https://www.candy.com/spangler-peppermint-candy-cane-jar-60-count"
-  #    #   #   puts "3. Spangler Cherry Candy Canes, 12 Count, 3 Pack - $9.95"
-  #    #   #   # puts "For more information visit: https://www.candy.com/spangler-cherry-candy-canes-12-pieces-3-count"
-  #    #   #   puts <<-DOC.gsub /^\s*/, ""
-  #    #   #     Enter a candy number to see details on that candy. Otherwise, enter one of the following prompts:
-  #    #   #     - Enter 'menu' to see the main menu
-  #    #   #     - Enter 'exit' to exit
-  #    #   #   DOC
-  #    #     puts ""
-  #      elsif category_input == "menu"
-  #        menu
-  #      elsif category_input != "exit"
-  #        puts ""
-  #        puts "I'm sorry, I didn't catch that."
-  #      elsif category_input == "exit"
-  #        goodbye
-  #      end
-  #    end
-  #  end
-
   def goodbye
     puts ""
     puts "We hope you enjoy a sweet treat! But don't spoil your dinner :)"
@@ -141,6 +74,5 @@ class Candy::CLI
     puts ""
     exit
   end
-
 
 end
