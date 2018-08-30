@@ -21,14 +21,22 @@ class Candy::Scraper
     Nokogiri::HTML(open(category.url))
   end
 
-  def scrape_category_page
+  # def get_category_page
+  #   Nokogiri::HTML(open("https://www.candy.com/sweets/candy-canes"))
+  # end
+
+  def scrape_category_page(category)
     self.get_category_page(category).css("div.productListItem-content")
   end
 
-  def make_candy
-    self.scrape_category_page.collect do |candy|
+  # def scrape_category_page
+  #   self.get_category_page.css("div.productListItem-content")
+  # end
+
+  def make_candy(category)
+    self.scrape_category_page(category).collect do |candy|
       Candy::Candy.new(
-        candy.css("h3 title").text,
+        candy.css("h3").text,
         candy.css("span.regular-price").text.gsub(/[ \n]/, ""),
         candy.css("h3 a").attribute("href").value
       )

@@ -3,7 +3,7 @@ class Candy::Category
 
   @@all = []
 
-  def initialize(name = nil, url = nil, candies = nil)
+  def initialize(name = nil, url = nil)
     @name = name
     @url = url
     @candies = []
@@ -30,6 +30,6 @@ class Candy::Category
     @candies.each.with_index(1) do |candy|
       puts "#{i}. #{candy} - #{candy.price}"
     end
-  end    
+  end
 
 end
