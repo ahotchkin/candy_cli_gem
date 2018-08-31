@@ -51,7 +51,7 @@ class Candy::CLI
       category_input = gets.strip.downcase
 
       if category_input.to_i.between?(1, Candy::Category.all.length)
-        puts "Click on any candy link for more information:"
+        puts ""
         category = Candy::Category.all[category_input.to_i-1]
         Candy::Scraper.new.make_candy(category)
         category.list_candies

@@ -11,7 +11,7 @@ class Candy::Scraper
   def make_categories
     self.scrape_index_page.each do |category|
       Candy::Category.new(
-        category.css("h2.candy-subcat-titles").text.gsub(/[ \n]/, ""),
+        category.css("h2.candy-subcat-titles").text.strip.gsub(/[\n]/, ""),
         category.css("a").attribute("href").value
       )
     end
@@ -29,7 +29,7 @@ class Candy::Scraper
     self.scrape_category_page(category).each do |candy_type|
       candy = Candy::Candy.new(
         candy_type.css("h3").text,
-        candy_type.css("span.regular-price").text.gsub(/[ \n]/, ""),
+        candy_type.css("span.regular-price").text.strip.gsub(/[\n]/, ""),
         candy_type.css("h3 a").attribute("href").value
       )
       category.add_candy(candy)

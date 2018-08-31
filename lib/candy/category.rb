@@ -31,19 +31,20 @@ class Candy::Category
   end
 
   def list_candies
-    @candies.each.with_index(1) do |candy, i|
+    puts "-----------------------------------#{self.name.upcase}-----------------------------------"
+    puts "Click on any candy link for more information:"
+    puts "----------------------------------------------------------------------" + "-" * self.name.length
 
-      puts "---------------------------------------------------------------------------------------"
+    @candies.each.with_index(1) do |candy, i|
       puts "#{i}. #{candy.name} - #{candy.price}"
       if i.between?(1,9)
         puts "   #{candy.url}"
       else
         puts "    #{candy.url}"
       end
-      puts "---------------------------------------------------------------------------------------"
-      puts ""
-
+      puts "----------------------------------------------------------------------" + "-" * self.name.length
     end
+    
   end
 
 end
