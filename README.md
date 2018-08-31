@@ -1,8 +1,6 @@
 # Candy
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/candy`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This Ruby gem provides a CLI to view a listing of all sweets available at Candy.com. While running the gem, users will be able to view all candy available by category to decide what they would like to treat themselves to.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run: `candy` after installing the gem, and follow the on-screen prompts.
 
 ## Development
 
