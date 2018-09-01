@@ -23,7 +23,7 @@ class Candy::CLI
         list_categories
       elsif menu_input == "help"
         puts ""
-        puts "This app is designed to provide information on all candy available in the 'Sweets' section of Candy.com. Follow the prompts for event details."
+        puts "This app is designed to provide information on all candy available in the 'Sweets' section of Candy.com. Follow the prompts for candy details."
         puts ""
       elsif menu_input != "exit"
         puts ""
