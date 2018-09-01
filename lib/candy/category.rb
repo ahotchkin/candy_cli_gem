@@ -44,7 +44,12 @@ class Candy::Category
       end
       puts "----------------------------------------------------------------------" + "-" * self.name.length
     end
-    
+
+    # How do I make this work?
+    # if category url contains li.current
+    #   puts "Visit #{category.url} for a complete list of all #{category} candy."
+    # end
+
   end
 
 end

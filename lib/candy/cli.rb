@@ -43,7 +43,7 @@ class Candy::CLI
     while category_input != "exit"
       puts ""
       puts <<-DOC.gsub /^\s*/, ""
-        Enter a category number to see a list of all available candy in that category. Otherwise, enter one of the following prompts:
+        Enter a category number to see a list of available candy in that category. Otherwise, enter one of the following prompts:
         - Enter 'menu' to see the main menu
         - Enter 'exit' to exit
       DOC
