@@ -31,9 +31,9 @@ class Candy::Category
   end
 
   def list_candies
-    puts "-----------------------------------#{self.name.upcase}-----------------------------------"
+    puts "--------------------------------------#{self.name.upcase}--------------------------------------"
     puts "Click on any candy link for more information:"
-    puts "----------------------------------------------------------------------" + "-" * self.name.length
+    puts "----------------------------------------------------------------------------" + "-" * self.name.length
 
     @candies.each.with_index(1) do |candy, i|
       puts "#{i}. #{candy.name} - #{candy.price}"
@@ -42,14 +42,14 @@ class Candy::Category
       else
         puts "    #{candy.url}"
       end
-      puts "----------------------------------------------------------------------" + "-" * self.name.length
+      puts "----------------------------------------------------------------------------" + "-" * self.name.length
     end
 
-    # How do I make this work?
-    # if category url contains li.current
-    #   puts "Visit #{category.url} for a complete list of all #{category} candy."
-    # end
-
+    if @candies.length == 24
+      puts ""
+      puts "Visit #{self.url} for a complete list of all #{self.name}."
+      puts "----------------------------------------------------------------------------" + "-" * self.name.length
+    end
   end
 
 end
